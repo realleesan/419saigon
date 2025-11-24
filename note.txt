@@ -1,0 +1,195 @@
+# PHÂN TÍCH CƠ SỞ DỮ LIỆU 419 SAIGON
+
+## TỔNG QUAN
+Cơ sở dữ liệu này được thiết kế cho website 419 Saigon - một hidden bar kết hợp giữa Dining, Cocktail bar và Cinema (rạp chiếu phim tư nhân).
+
+## CÁC BẢNG CHÍNH VÀ MỐI QUAN HỆ
+
+### 1. BẢNG NGƯỜI DÙNG (users)
+- **Mục đích**: Quản lý thông tin người dùng và admin
+- **Các trường chính**:
+  - id: Khóa chính, tự động tăng
+  - username, email: Thông tin đăng nhập (unique)
+  - password: Mật khẩu được mã hóa
+  - first_name, last_name: Họ và tên
+  - phone: Số điện thoại
+  - role: Vai trò (user/admin)
+  - status: Trạng thái tài khoản
+- **Mối quan hệ**: Được tham chiếu bởi bảng bookings, orders
+
+### 2. BẢNG DANH MỤC (categories)
+- **Mục đích**: Phân loại các món ăn, đồ uống và phim
+- **Các trường chính**:
+  - id: Khóa chính
+  - name: Tên danh mục
+  - type: Loại (food/drink/movie)
+  - status: Trạng thái hoạt động
+- **Mối quan hệ**: Một-nhiều với menu_items
+
+### 3. BẢNG MÓN ĂN/ĐỒ UỐNG (menu_items)
+- **Mục đích**: Quản lý menu của quán
+- **Các trường chính**:
+  - id: Khóa chính
+  - name, description: Tên và mô tả món
+  - price: Giá tiền
+  - category_id: Tham chiếu đến categories
+  - image: Hình ảnh món
+  - ingredients: Nguyên liệu
+  - is_available: Còn phục vụ không
+  - is_featured: Món nổi bật
+- **Mối quan hệ**: 
+  - Nhiều-một với categories
+  - Một-nhiều với order_items
+
+### 4. BẢNG PHIM (movies)
+- **Mục đích**: Quản lý danh sách phim có thể chiếu
+- **Các trường chính**:
+  - id: Khóa chính
+  - title: Tên phim
+  - description: Mô tả phim
+  - duration: Thời lượng (phút)
+  - genre: Thể loại phim
+  - poster: Áp phích phim
+  - trailer_url: Link trailer
+- **Mối quan hệ**: Một-nhiều với movie_schedules
+
+### 5. BẢNG PHÒNG CHIẾU (cinema_rooms)
+- **Mục đích**: Quản lý các phòng chiếu phim tư nhân
+- **Các trường chính**:
+  - id: Khóa chính
+  - name: Tên phòng
+  - capacity: Sức chứa
+  - description: Mô tả phòng
+  - price_per_hour: Giá theo giờ
+- **Mối quan hệ**: 
+  - Một-nhiều với movie_schedules
+  - Một-nhiều với cinema_bookings
+
+### 6. BẢNG LỊCH CHIẾU (movie_schedules)
+- **Mục đích**: Quản lý lịch chiếu phim trong các phòng
+- **Các trường chính**:
+  - id: Khóa chính
+  - movie_id: Tham chiếu đến movies
+  - room_id: Tham chiếu đến cinema_rooms
+  - date: Ngày chiếu
+  - start_time, end_time: Giờ bắt đầu và kết thúc
+- **Mối quan hệ**: 
+  - Nhiều-một với movies
+  - Nhiều-một với cinema_rooms
+
+### 7. BẢNG ĐẶT CHỖ (bookings)
+- **Mục đích**: Quản lý tất cả các loại đặt chỗ
+- **Các trường chính**:
+  - id: Khóa chính
+  - user_id: Tham chiếu đến users (có thể null)
+  - booking_type: Loại đặt chỗ (dining/cinema/cocktail)
+  - name, email, phone: Thông tin liên hệ
+  - date, time: Ngày và giờ đặt
+  - guests: Số khách
+  - special_requests: Yêu cầu đặc biệt
+  - status: Trạng thái đặt chỗ
+  - total_amount: Tổng tiền
+- **Mối quan hệ**: 
+  - Nhiều-một với users
+  - Một-một với cinema_bookings
+  - Một-nhiều với orders
+
+### 8. BẢNG ĐẶT CHỖ CINEMA (cinema_bookings)
+- **Mục đích**: Thông tin chi tiết cho đặt chỗ cinema
+- **Các trường chính**:
+  - id: Khóa chính
+  - booking_id: Tham chiếu đến bookings
+  - room_id: Tham chiếu đến cinema_rooms
+  - movie_preference: Phim ưa thích
+  - duration_hours: Số giờ thuê phòng
+- **Mối quan hệ**: 
+  - Một-một với bookings
+  - Nhiều-một với cinema_rooms
+
+### 9. BẢNG ĐƠN HÀNG (orders)
+- **Mục đích**: Quản lý đơn hàng thức ăn/đồ uống
+- **Các trường chính**:
+  - id: Khóa chính
+  - booking_id: Tham chiếu đến bookings (có thể null)
+  - user_id: Tham chiếu đến users (có thể null)
+  - order_type: Loại đơn (dine_in/takeaway)
+  - status: Trạng thái đơn hàng
+  - total_amount: Tổng tiền
+  - notes: Ghi chú
+- **Mối quan hệ**: 
+  - Nhiều-một với bookings
+  - Nhiều-một với users
+  - Một-nhiều với order_items
+
+### 10. BẢNG CHI TIẾT ĐƠN HÀNG (order_items)
+- **Mục đích**: Chi tiết các món trong đơn hàng
+- **Các trường chính**:
+  - id: Khóa chính
+  - order_id: Tham chiếu đến orders
+  - menu_item_id: Tham chiếu đến menu_items
+  - quantity: Số lượng
+  - unit_price: Đơn giá
+  - total_price: Thành tiền
+  - special_instructions: Hướng dẫn đặc biệt
+- **Mối quan hệ**: 
+  - Nhiều-một với orders
+  - Nhiều-một với menu_items
+
+### 11. BẢNG TIN NHẮN LIÊN HỆ (contact_messages)
+- **Mục đích**: Lưu trữ tin nhắn từ khách hàng
+- **Các trường chính**:
+  - id: Khóa chính
+  - first_name, last_name: Họ tên người gửi
+  - email, phone: Thông tin liên hệ
+  - subject: Tiêu đề tin nhắn
+  - message: Nội dung tin nhắn
+  - newsletter_subscription: Đăng ký nhận tin
+  - status: Trạng thái xử lý
+- **Mối quan hệ**: Không có quan hệ trực tiếp
+
+### 12. BẢNG ĐĂNG KÝ NHẬN TIN (newsletter_subscribers)
+- **Mục đích**: Quản lý danh sách đăng ký nhận tin
+- **Các trường chính**:
+  - id: Khóa chính
+  - email: Email đăng ký (unique)
+  - first_name, last_name: Họ tên
+  - status: Trạng thái đăng ký
+- **Mối quan hệ**: Không có quan hệ trực tiếp
+
+### 13. BẢNG CÀI ĐẶT (settings)
+- **Mục đích**: Lưu trữ các cài đặt hệ thống
+- **Các trường chính**:
+  - id: Khóa chính
+  - setting_key: Tên cài đặt (unique)
+  - setting_value: Giá trị cài đặt
+  - description: Mô tả cài đặt
+- **Mối quan hệ**: Không có quan hệ trực tiếp
+
+## SƠ ĐỒ MỐI QUAN HỆ
+
+```
+users (1) ←→ (N) bookings (1) ←→ (1) cinema_bookings (N) ←→ (1) cinema_rooms
+    ↑                                    ↑
+    |                                    |
+    |                                    |
+    └── (N) ←→ (1) orders (1) ←→ (N) order_items (N) ←→ (1) menu_items (N) ←→ (1) categories
+                                                                    ↑
+                                                                    |
+                                                                    |
+movies (1) ←→ (N) movie_schedules (N) ←→ (1) cinema_rooms
+```
+
+## CÁC VIEW QUAN TRỌNG
+
+1. **available_menu_items**: Hiển thị các món ăn còn phục vụ
+2. **today_bookings**: Hiển thị đặt chỗ hôm nay
+3. **recent_orders**: Hiển thị đơn hàng gần đây
+
+## GHI CHÚ THIẾT KẾ
+
+- Sử dụng InnoDB engine để hỗ trợ foreign key constraints
+- Có các index để tối ưu hiệu suất truy vấn
+- Sử dụng enum để giới hạn các giá trị hợp lệ
+- Có timestamp tự động cập nhật cho các bảng quan trọng
+- Thiết kế linh hoạt cho phép đặt chỗ không cần đăng nhập
+- Hỗ trợ đa ngôn ngữ với utf8mb4 charset

@@ -1,0 +1,67 @@
+Bạn là chuyên gia lập trình web. Tôi cần bạn xây dựng website 419 Saigon theo cấu trúc thư mục sau (chạy trên localhost với PHP + CSS + JS + SQL):
+
+419saigon/
+│── index.php (*)
+│── (izakaya.php removed)
+│── cocktail.php (*)
+│── cinema.php (*)
+│── about.php (*)
+│── contact.php (*)
+│── login.php
+│── logout.php
+│── forgot_password.php
+│── checkout.php
+│── payment.php
+│── account.php
+│── search.php
+│
+│── includes/
+│   │── header.php (*)
+│   │── footer.php (*)
+│   │── config.php (*)
+│
+│── assets/
+│   │── css/ (*)
+│   │── js/ (*)
+│   │── images/ (*)
+│
+│── database/419saigon.sql
+│
+│── admin/
+│   │── dashboard.php 
+│   │── (izakaya.php removed)
+│   │── cocktail.php
+│   │── cinema.php
+│   │── orders.php
+│   │── contact.php
+│   │── about.php
+│   │── tags.php
+│   │── settings.php
+│   │── users.php
+│   │── assets/css/
+│   │── assets/js/
+
+Yêu cầu:
+1. Ngôn ngữ: PHP + CSS + JavaScript (không framework nặng, chỉ vanilla), cơ sở dữ liệu MariaDB/MySQL (file .sql để import).
+2. Có header.php và footer.php trong thư mục /includes để include vào tất cả các trang.
+3. Phong cách thiết kế:
+   - Tone màu: Đen (#0a0a0a), nâu gỗ, vàng ánh (#d4af37), trắng ngà (#f5f5f5).
+   - Font chữ: Inter (sans-serif, cho body) + Playfair Display (serif, cho heading).
+   - Hiệu ứng: cinematic, smooth scroll, blur, fade in/out, hover glow màu vàng.
+   - Giao diện tối giản nhưng sang trọng (dark luxury).
+4. Các trang giao diện người dùng:
+   - index.php (Trang chủ): Hero image/video cinematic + tagline “A Japanese Dining Meets Cocktail & Cinema”, 3 thẻ dẫn tới Dining, Cocktail, Cinema, CTA “Book Your Experience”.
+   - (izakaya.php removed)
+   - cocktail.php: Giới thiệu quầy bar, hiển thị cocktail signature/hot deal (placeholder), nút “Khám Phá Cocktails”.
+   - cinema.php: Giới thiệu phòng chiếu riêng, có 2 phần: lịch chiếu (placeholder) + form đặt lịch (chưa cần xử lý DB, chỉ HTML), nút “Xem Lịch Chiếu” & “Đặt Phòng Chiếu Riêng”.
+   - about.php: Câu chuyện thương hiệu 419 Saigon, ảnh + mô tả, phong cách storytelling.
+   - contact.php: Form liên hệ + bản đồ Google Map nhúng.
+   - Các trang login.php, logout.php, forgot_password.php, checkout.php, payment.php, account.php, search.php: chỉ cần layout cơ bản + placeholder.
+5. Admin panel (/admin):
+   - Có dashboard.php với sidebar menu điều hướng.
+   - Các file khác (izakaya.php, cocktail.php, cinema.php, orders.php, contact.php, about.php, tags.php, settings.php, users.php) chỉ cần giao diện khung CRUD cơ bản với bảng dữ liệu + form.
+   - Giao diện admin dùng tông tối, sidebar trái, header topbar.
+6. Code sạch, tách CSS/JS riêng trong thư mục assets, đặt placeholder text/ảnh để test giao diện.
+7. Mục tiêu trước mắt: website có thể chạy trên localhost, chuyển trang đầy đủ, có header/footer đồng nhất, style theo thiết kế dark luxury. Các chức năng động (CRUD, booking, payment) sẽ bổ sung sau.
+
+Kết quả mong đợi: Source code đầy đủ theo cấu trúc trên, mỗi trang hiển thị giao diện đúng mô tả, có thể chạy ngay trên localhost (XAMPP/Laragon).

@@ -1,0 +1,41 @@
+## **1A. Izakaya (Food) — Flow chính**
+
+Mục tiêu: user chọn ngày, chọn set (cố định) hoặc tự build set, thanh toán/đặt chỗ, lưu/feedback.
+
+### **A.1 Flow: Truy cập lịch & chọn ngày**
+
+1. User vào trang Izakaya → thấy **Calendar (Tháng)** với trạng thái từng ngày:
+    - Badge: Open / Full / Closed
+    - Tooltip: số suất còn lại, loại menu (ví dụ: "Set A/B/C / Custom allowed")
+2. User click 1 ngày → mở modal hoặc page Day Details:
+    - Các suất giờ (nếu có phân shift): 18:00, 20:00…
+    - Thông tin: Số suất còn lại, Giới hạn khách, Ghi chú (VD: chỉ nhận đặt trước).
+    - CTA: Chọn suất (nếu có giờ) hoặc Chọn ngày này.
+
+### **A.2 Flow: Chọn Option — Set Nhà Hàng / Tự tạo Set**
+
+**State: Day Selected → show two options**
+
+- Option 1: **Menu set sẵn**
+    - Hiển thị 3 set (A/B/C) với: tên, giá, danh sách món tóm tắt, ảnh, số suất còn lại.
+    - Nút: Đặt Set này → form đặt chỗ (Tên, số người, số điện thoại, yêu cầu) → tiếp thanh toán/confirm.
+- Option 2: **Tự tạo set (Menu Builder)**
+    - Mở Menu Builder UI (see UI components).
+    - Danh sách món rời có filter (Khai vị / Chính / Tráng miệng / Đồ uống) + giá + ảnh + tooltip allergen.
+    - User kéo/chọn món vào Set Cart. Hệ thống liên tục hiển thị Tổng giá, Số món, Số người (nhập).
+    - **Validation rule**: Tổng giá >= MinimumSetPrice (1,500,000 VND cho 2 pax)
+        - Nếu số khách >2, min price có thể tỉ lệ (configurable): ví dụ min = 1,500,000 * ceil(num_pax/2) — **(đề xuất configurable)**.
+    - Khi đạt điều kiện → enable Đặt Set này.
+    - Sau submit → form đặt chỗ tương tự → proceed to payment/confirm.
+
+### **A.3 Lưu set & Feedback**
+
+- Sau booking xong hoặc sau dùng dịch vụ:
+    - Nếu user logged-in: show button Lưu Set (save template) → name set + optional notes → saved to User.saved_sets.
+    - Feedback: sau sự kiện (post-visit), gửi email/zalo invite cho khách để Đánh giá Set (rating 1–5 + text). Feedback lưu vào Feedback table liên kết booking + set.
+
+### **A.4 Trạng thái & error**
+
+- Nếu suất đã hết giữa lúc user đang xây set → on checkout show conflict → suggest alternative ngày hoặc add-to-waitlist.
+
+Nếu validation min-price fail → disable checkout + show message Set chưa đạt mức tối thiểu: còn thiếu X VND.
