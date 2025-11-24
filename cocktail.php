@@ -341,15 +341,15 @@ if ($is_ajax) {
                 <p>Từ những cocktail cổ điển được pha chế hoàn hảo đến những tác phẩm nghệ thuật độc đáo, mỗi ly cocktail tại 419 Saigon đều mang trong mình một câu chuyện và hương vị riêng biệt.</p>
                 <div class="bar-features">
                     <div class="feature-item">
-                        <span class="feature-icon">🥃</span>
+                        <span class="feature-icon"></span>
                         <span>Rượu cao cấp nhập khẩu</span>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">🍋</span>
+                        <span class="feature-icon"></span>
                         <span>Nguyên liệu tươi ngon</span>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">👨‍🍳</span>
+                        <span class="feature-icon"></span>
                         <span>Bartender chuyên nghiệp</span>
                     </div>
                 </div>
@@ -668,7 +668,7 @@ if ($is_ajax) {
         
         <!-- No Results Message -->
         <div id="noResults" class="no-results" style="display: none;">
-            <div class="no-results-icon">🍸</div>
+        <div class="no-results-icon"></div>
             <h3>Không tìm thấy cocktail nào</h3>
             <p>Hãy thử thay đổi bộ lọc hoặc từ khóa tìm kiếm</p>
         </div>
@@ -826,20 +826,20 @@ if ($is_ajax) {
         <div class="bespoke-container">
             <div class="bespoke-content">
                 <div class="bespoke-info">
-                    <h3>🎨 Tùy chỉnh theo ý thích</h3>
+                    <h3>Tùy chỉnh theo ý thích</h3>
                     <p>Tại 419 Saigon, chúng tôi tin rằng mỗi người đều có khẩu vị riêng. Hãy cho chúng tôi biết bạn muốn gì và chúng tôi sẽ tạo ra một cocktail hoàn hảo dành riêng cho bạn.</p>
                     
                     <div class="bespoke-features">
                         <div class="feature-item">
-                            <span class="feature-icon">🍋</span>
+                            <span class="feature-icon"></span>
                             <span>Nguyên liệu tươi ngon</span>
                         </div>
                         <div class="feature-item">
-                            <span class="feature-icon">👨‍🍳</span>
+                            <span class="feature-icon"></span>
                             <span>Bartender chuyên nghiệp</span>
                         </div>
                         <div class="feature-item">
-                            <span class="feature-icon">✨</span>
+                            <span class="feature-icon"></span>
                             <span>Hương vị độc đáo</span>
                         </div>
                     </div>

@@ -109,19 +109,19 @@ if (isset($_SESSION['booking_error'])) {
                 <p>Với công nghệ chiếu phim hiện đại, hệ thống âm thanh chất lượng cao và dịch vụ phục vụ tận tình, mỗi buổi xem phim tại 419 Cinema đều trở thành một trải nghiệm đáng nhớ.</p>
                 <div class="cinema-features">
                     <div class="feature-item">
-                        <span class="feature-icon">🎬</span>
+                        <span class="feature-icon"></span>
                         <span>4K Projector</span>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">🔊</span>
+                        <span class="feature-icon"></span>
                         <span>Dolby Surround</span>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">🛋️</span>
+                        <span class="feature-icon"></span>
                         <span>Ghế Sofa VIP</span>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">🍿</span>
+                        <span class="feature-icon"></span>
                         <span>Dịch vụ đồ ăn/uống</span>
                     </div>
                 </div>
@@ -290,7 +290,7 @@ if (isset($_SESSION['booking_error'])) {
                                 <div class="movie-info-modal">
                                     <h4><?php echo htmlspecialchars($movie['title']); ?></h4>
                                     <p class="movie-genre"><?php echo htmlspecialchars($movie['genre']); ?></p>
-                                    <p class="movie-duration">⏱️ <?php echo $movie['duration']; ?> phút</p>
+                                    <p class="movie-duration"><?php echo $movie['duration']; ?> phút</p>
                                     
                                     <!-- Movie Rating -->
                                     <div class="movie-rating">
@@ -311,7 +311,7 @@ if (isset($_SESSION['booking_error'])) {
                 <!-- Custom Movie Option -->
                 <div id="custom-movie" class="movie-type-content">
                     <div class="custom-movie-info">
-                        <h3>🎬 Mang Phim Riêng</h3>
+                        <h3>Mang Phim Riêng</h3>
                         <p>Bạn có thể mang phim riêng của mình (USB, DVD, hoặc file video). Chúng tôi sẽ hỗ trợ các định dạng phổ biến.</p>
                         
                         <div class="custom-movie-requirements">
@@ -329,7 +329,7 @@ if (isset($_SESSION['booking_error'])) {
                 
                 <!-- Cinema Specials -->
                 <div class="cinema-specials-section">
-                    <h3>🍿 Cinema Specials</h3>
+                    <h3>Cinema Specials</h3>
                     <p>Combo "Phim + Đồ ăn/uống" với giá trọn gói:</p>
                     <div class="combos-grid-modal">
                         <?php foreach ($combos as $combo): ?>
@@ -377,8 +377,8 @@ if (isset($_SESSION['booking_error'])) {
                 <div id="selectedComboInfo"></div>
                 
                 <div class="summary-controls" id="summaryControls" style="display: none;">
-                    <button type="button" class="btn btn-outline btn-sm" onclick="clearAllSelections()">
-                        <span>🗑️</span> Xóa Tất Cả
+                        <button type="button" class="btn btn-outline btn-sm" onclick="clearAllSelections()">
+                        Xóa Tất Cả
                     </button>
                 </div>
                 
@@ -485,9 +485,9 @@ if (isset($_SESSION['booking_error'])) {
                     </div>
 
 <style>
-/* Cinema specific styles */
+/* Cinema specific styles (updated to light theme) */
 .cinema-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/cinema-hero.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('assets/images/cinema-hero.jpg');
     background-size: cover;
     background-position: center;
     height: 70vh;
@@ -515,10 +515,6 @@ if (isset($_SESSION['booking_error'])) {
     border-radius: 8px;
 }
 
-.cinema-features {
-    margin-top: var(--spacing-lg);
-}
-
 .feature-item {
     display: flex;
     align-items: center;
@@ -526,19 +522,17 @@ if (isset($_SESSION['booking_error'])) {
     margin-bottom: var(--spacing-sm);
 }
 
-.feature-item .feature-icon {
-    font-size: 1.5rem;
-}
+.feature-item .feature-icon { font-size: 1.5rem; }
 
-/* Calendar Styles - Adapted from Izakaya */
+/* Calendar Styles - CHỈ ĐEN VÀ TRẮNG */
 .calendar-container {
     max-width: 1000px;
     margin: 0 auto;
-    background: var(--color-black);
+    background: var(--color-white);
     border-radius: 12px;
     padding: var(--spacing-xl);
-    border: 2px solid var(--color-gold);
-    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+    border: 2px solid var(--color-black);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 .calendar-nav {
@@ -547,1232 +541,132 @@ if (isset($_SESSION['booking_error'])) {
     align-items: center;
     margin-bottom: var(--spacing-lg);
     padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.current-month {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-gold);
-}
+.current-month { font-size: 1.5rem; font-weight: 600; color: var(--color-black); }
 
 .calendar-grid {
-    background: var(--color-dark-gray);
+    background: var(--color-white);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .calendar-header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    background: var(--color-gold);
-    color: var(--color-black);
+    background: var(--color-black);
+    color: var(--color-white);
     font-weight: 600;
 }
 
-.calendar-header > div {
-    padding: var(--spacing-md);
-    text-align: center;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
+.calendar-header > div { padding: var(--spacing-md); text-align: center; border-right: 1px solid rgba(255, 255, 255, 0.1); }
+.calendar-header > div:last-child { border-right: none; }
 
-.calendar-header > div:last-child {
-    border-right: none;
-}
-
-.calendar-week {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
+.calendar-week { display: grid; grid-template-columns: repeat(7, 1fr); }
 
 .calendar-day {
     min-height: 100px;
     padding: var(--spacing-sm);
-    border-right: 1px solid rgba(212, 175, 55, 0.1);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-}
-
-.calendar-day:hover {
-    background: rgba(212, 175, 55, 0.1);
-}
-
-.calendar-day.other-month {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.calendar-day.today {
-    background: rgba(212, 175, 55, 0.2);
-    border: 2px solid var(--color-gold);
-}
-
-.calendar-day.closed {
-    background: rgba(255, 0, 0, 0.1);
-    cursor: not-allowed;
-}
-
-.calendar-day.full {
-    background: rgba(255, 165, 0, 0.1);
-    cursor: not-allowed;
-}
-
-.calendar-day.too-far {
-    background: rgba(128, 128, 128, 0.1);
-    cursor: not-allowed;
-}
-
-.calendar-day.selected {
-    background: var(--color-gold);
+    background: var(--color-white);
     color: var(--color-black);
-    border: 2px solid var(--color-gold);
 }
+
+.calendar-day:hover { background: rgba(0, 0, 0, 0.06); }
+.calendar-day.other-month { opacity: 0.6; cursor: not-allowed; }
+.calendar-day.today { background: rgba(0, 0, 0, 0.14); border: 2px solid var(--color-black); }
+.calendar-day.closed { background: rgba(0, 0, 0, 0.06); cursor: not-allowed; }
+.calendar-day.full { background: rgba(0, 0, 0, 0.06); cursor: not-allowed; }
+.calendar-day.too-far { background: rgba(0, 0, 0, 0.06); cursor: not-allowed; }
+.calendar-day.selected { background: var(--color-black); color: var(--color-white); border: 2px solid var(--color-black); }
 
 .calendar-day.selected .day-number,
 .calendar-day.selected .status,
 .calendar-day.selected .menu-type,
 .calendar-day.selected .capacity-info,
 .calendar-day.selected .booking-count,
-.calendar-day.selected small {
-    color: var(--color-black);
-}
-
-.day-number {
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-cream);
-}
-
-.day-status {
-    margin-bottom: var(--spacing-xs);
-}
-
-.status {
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-}
-
-.status.available {
-    background: rgba(81, 207, 102, 0.2);
-    color: #51cf66;
-}
-
-.status.full {
-    background: rgba(255, 107, 107, 0.2);
-    color: #ff6b6b;
-}
-
-.status.too-far {
-    background: rgba(128, 128, 128, 0.2);
-    color: #808080;
-}
-
-.menu-type {
-    display: block;
-    font-size: 0.7rem;
-    color: var(--color-light-gray);
-    margin-bottom: var(--spacing-xs);
-}
-
-.capacity-info {
-    font-size: 0.7rem;
-    color: var(--color-gold);
-    font-weight: 500;
-}
-
-.booking-count {
-    font-size: 0.7rem;
-    color: var(--color-cream);
-    margin-top: var(--spacing-xs);
-}
-
-.time-slots {
-    margin-top: var(--spacing-xs);
-}
-
-.time-slots small {
-    color: var(--color-light-gray);
-    font-size: 0.7rem;
-}
-
-
-.movie-schedule {
-    display: grid;
-    gap: var(--spacing-lg);
-}
-
-.movie-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: var(--spacing-lg);
-    background: var(--color-black);
-    border-radius: 8px;
-    padding: var(--spacing-lg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.movie-poster {
-    height: 180px;
-}
-
-.movie-poster img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.movie-info h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-sm);
-}
-
-.movie-genre {
-    color: var(--color-light-gray);
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-xs);
-}
-
-.movie-duration {
-    color: var(--color-light-gray);
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.movie-language {
-    color: var(--color-light-gray);
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.minimum-spend {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-sm);
-    border-radius: 8px;
-    margin-bottom: var(--spacing-md);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.spend-label {
-    color: var(--color-gold);
-    font-weight: 600;
-    display: block;
-    margin-bottom: var(--spacing-xs);
-}
-
-.spend-amount {
-    color: var(--color-cream);
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.movie-times {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-}
-
-.time-slot {
-    background: var(--color-dark-gray);
-    color: var(--color-gold);
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-}
-
-.time-slot:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-}
-
-.minimum-spend-info {
-    background: var(--color-black);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.minimum-spend-info h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.1rem;
-}
-
-.minimum-spend-info p {
-    color: var(--color-light-gray);
-    margin-bottom: var(--spacing-sm);
-    font-size: 0.9rem;
-}
-
-.minimum-spend-info ul {
-    margin-top: var(--spacing-sm);
-    padding-left: var(--spacing-lg);
-}
-
-.minimum-spend-info li {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-light-gray);
-    font-size: 0.85rem;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-    background: var(--color-black);
-    margin: 2% auto;
-    padding: var(--spacing-xl);
-    border: 2px solid var(--color-gold);
-    border-radius: 12px;
-    width: 90%;
-    max-width: 1000px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-}
-
-.modal-content h2 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-}
-
-.close {
-    color: var(--color-gold);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-lg);
-}
-
-.close:hover,
-.close:focus {
-    color: var(--color-cream);
-    text-decoration: none;
-}
-
-/* Movie Selection Modal Styles */
-.movie-selection {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
-}
-
-.movie-selection-options {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.movie-options-tabs {
-    display: flex;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    padding-bottom: var(--spacing-md);
-}
-
-.tab-btn {
-    background: transparent;
-    border: 1px solid var(--color-gray);
-    color: var(--color-light-gray);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    font-size: 0.9rem;
-}
-
-.tab-btn.active {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border-color: var(--color-gold);
-}
-
-.tab-btn:hover:not(.active) {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: var(--color-gold);
-}
-
-.movie-type-content {
-    display: none;
-}
-
-.movie-type-content.active {
-    display: block;
-}
-
-.filter-bar {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.filter-bar h4 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-sm);
-    font-size: 1rem;
-}
-
-.filter-buttons {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    background: var(--color-black);
-    border: 1px solid var(--color-gray);
-    color: var(--color-light-gray);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    font-size: 0.8rem;
-}
-
-.filter-btn.active {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border-color: var(--color-gold);
-}
-
-.filter-btn:hover:not(.active) {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: var(--color-gold);
-}
-
-.custom-movie-info {
-    text-align: center;
-    padding: var(--spacing-xl);
-}
-
-.custom-movie-info h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-md);
-}
-
-.custom-movie-info p {
-    color: var(--color-light-gray);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.6;
-}
-
-.custom-movie-requirements {
-    background: var(--color-black);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.custom-movie-requirements h4 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-sm);
-}
-
-.custom-movie-requirements ul {
-    text-align: left;
-    color: var(--color-light-gray);
-}
-
-.custom-movie-requirements li {
-    margin-bottom: var(--spacing-xs);
-    padding-left: var(--spacing-sm);
-}
-
-.cinema-specials-section {
-    margin-top: var(--spacing-xl);
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.cinema-specials-section h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-sm);
-    text-align: center;
-}
-
-.cinema-specials-section p {
-    color: var(--color-light-gray);
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-
-.movie-summary {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    position: sticky;
-    top: var(--spacing-lg);
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.movie-summary h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-}
-
-.guest-selection {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.guest-selection label {
-    display: block;
-    color: var(--color-cream);
-    font-weight: 500;
-    margin-bottom: var(--spacing-sm);
-}
-
-.guest-selection select {
-    width: 100%;
-    padding: var(--spacing-sm);
-    background: var(--color-black);
-    border: 1px solid var(--color-gray);
-    border-radius: 4px;
-    color: var(--color-cream);
-    font-size: 0.9rem;
-}
-
-.guest-selection select:focus {
-    outline: none;
-    border-color: var(--color-gold);
-    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-}
-
-.summary-controls {
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-}
-
-.total-section {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--color-black);
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.total-amount {
-    text-align: center;
-    margin-bottom: var(--spacing-sm);
-}
-
-.total-amount strong {
-    color: var(--color-gold);
-    font-size: 1.1rem;
-}
-
-
-.requirement-status {
-    text-align: center;
-    padding: var(--spacing-sm);
-    border-radius: 4px;
-    margin-bottom: var(--spacing-sm);
-}
-
-.requirement-status.success {
-    background: rgba(81, 207, 102, 0.1);
-    border: 1px solid #51cf66;
-}
-
-.requirement-status.warning {
-    background: rgba(255, 212, 59, 0.1);
-    border: 1px solid #ffd43b;
-}
-
-.requirement-status.error {
-    background: rgba(255, 107, 107, 0.1);
-    border: 1px solid #ff6b6b;
-}
-
-.requirement-status .status-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.requirement-status.success .status-text {
-    color: #51cf66;
-}
-
-.requirement-status.warning .status-text {
-    color: #ffd43b;
-}
-
-.requirement-status.error .status-text {
-    color: #ff6b6b;
-}
-
-.available-movies-modal h3,
-.cinema-specials-modal h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-}
-
-.available-movies-modal p,
-.cinema-specials-modal p {
-    color: var(--color-light-gray);
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-
-.movies-grid-modal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.movie-card-modal {
-    background: var(--color-dark-gray);
-    border-radius: 12px;
-    padding: var(--spacing-md);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    transition: all var(--transition-normal);
-    cursor: pointer;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.movie-card-modal:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-gold);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-}
-
-.movie-card-modal:hover .movie-overlay {
-    opacity: 1;
-}
-
-.movie-card-modal.selected {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border-color: var(--color-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-}
-
-.movie-card-modal.selected h4,
-.movie-card-modal.selected p,
-.movie-card-modal.selected .spend-label,
-.movie-card-modal.selected .rating-text {
-    color: var(--color-black);
-}
-
-.movie-card-modal.selected .star {
-    color: var(--color-black);
-}
-
-.movie-poster-modal {
-    width: 100%;
-    height: 180px;
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.movie-poster-modal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-normal);
-}
-
-.movie-card-modal:hover .movie-poster-modal img {
-    transform: scale(1.05);
-}
-
-.movie-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-}
-
-.movie-info-modal h4 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-xs);
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.movie-info-modal p {
-    color: var(--color-light-gray);
-    font-size: 0.85rem;
-    margin-bottom: var(--spacing-xs);
-    text-align: left;
-}
-
-.movie-rating {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    margin: var(--spacing-sm) 0;
-    justify-content: center;
-}
-
-.movie-rating .star {
-    color: var(--color-gold);
-    font-size: 0.9rem;
-}
-
-.movie-rating .star.empty {
-    color: var(--color-gray);
-}
-
-.movie-rating .rating-text {
-    color: var(--color-light-gray);
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-
-.combos-grid-modal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.combo-card-modal {
-    background: var(--color-dark-gray);
-    border-radius: 12px;
-    padding: var(--spacing-md);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    transition: all var(--transition-normal);
-    cursor: pointer;
-    position: relative;
-}
-
-.combo-card-modal:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-gold);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
-}
-
-.combo-card-modal.selected {
-    background: var(--color-gold);
-    color: var(--color-black);
-    border-color: var(--color-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 18px rgba(212, 175, 55, 0.35);
-}
-
-.combo-card-modal.selected h4,
-.combo-card-modal.selected p,
-.combo-card-modal.selected small {
-    color: var(--color-black);
-}
-
-.combo-header-modal {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.combo-header-modal h4 {
-    color: var(--color-gold);
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    flex: 1;
-}
-
-.combo-price-modal {
-    color: var(--color-gold);
-    font-size: 1.1rem;
-    font-weight: 700;
-    background: rgba(212, 175, 55, 0.1);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: 6px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.combo-description-modal {
-    margin-bottom: var(--spacing-sm);
-}
-
-.combo-description-modal p {
-    color: var(--color-light-gray);
-    font-size: 0.85rem;
-    line-height: 1.5;
-    text-align: left;
-}
-
-.combo-items-modal {
-    margin-bottom: var(--spacing-sm);
-}
-
-.combo-items-modal small {
-    color: var(--color-cream);
-    font-size: 0.75rem;
-    line-height: 1.4;
-    display: block;
-    padding: var(--spacing-xs);
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-}
-
-.combo-actions {
-    display: flex;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
-    padding-top: var(--spacing-sm);
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.combo-actions .btn {
-    flex: 1;
-    font-size: 0.8rem;
-    padding: var(--spacing-xs) var(--spacing-sm);
-}
-
-.modal-actions {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-/* Booking Modal Styles */
-.booking-summary {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    margin-bottom: var(--spacing-lg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.booking-summary h3 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-md);
-}
-
-.booking-total {
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.booking-total strong {
-    color: var(--color-gold);
-    font-size: 1.1rem;
-}
-
-.booking-guest-info {
-    margin-top: var(--spacing-sm);
-}
-
-.booking-guest-info small {
-    color: var(--color-light-gray);
-}
-
-.booking-form-modal {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.selected-item {
-    margin-bottom: var(--spacing-sm);
-    padding: var(--spacing-sm);
-    background: var(--color-black);
-    border-radius: 4px;
-    border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.selected-item strong {
-    color: var(--color-gold);
-}
-
-.selected-item small {
-    color: var(--color-light-gray);
-}
-
-.booking-info {
-    padding: var(--spacing-xl);
-}
-
-.info-item {
-    margin-bottom: var(--spacing-lg);
-}
-
-.info-item strong {
-    color: var(--color-gold);
-    display: block;
-    margin-bottom: var(--spacing-xs);
-}
-
-.info-item ul {
-    margin-top: var(--spacing-xs);
-    padding-left: var(--spacing-lg);
-}
-
-.info-item li {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-light-gray);
-}
-
-/* Minimum Spend Calculator */
-.minimum-spend-calculator {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-lg);
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    margin-top: var(--spacing-lg);
-}
-
-.minimum-spend-calculator h4 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-md);
-}
-
-.calculator-input {
-    margin-bottom: var(--spacing-md);
-}
-
-.calculator-input label {
-    display: block;
-    color: var(--color-cream);
-    font-weight: 500;
-    margin-bottom: var(--spacing-xs);
-    font-size: 0.9rem;
-}
-
-.calculator-input input {
-    width: 100%;
-    padding: var(--spacing-sm);
-    background: var(--color-black);
-    border: 1px solid var(--color-gray);
-    border-radius: 4px;
-    color: var(--color-cream);
-    font-size: 0.9rem;
-}
-
-.calculator-result {
-    margin-top: var(--spacing-md);
-}
-
-.spend-status {
-    padding: var(--spacing-sm);
-    border-radius: 4px;
-    text-align: center;
-}
-
-.spend-status.success {
-    background: rgba(81, 207, 102, 0.1);
-    border: 1px solid #51cf66;
-    color: #51cf66;
-}
-
-.spend-status.warning {
-    background: rgba(255, 212, 59, 0.1);
-    border: 1px solid #ffd43b;
-    color: #ffd43b;
-}
-
-.spend-status.error {
-    background: rgba(255, 107, 107, 0.1);
-    border: 1px solid #ff6b6b;
-    color: #ff6b6b;
-}
-
-.spend-details {
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-md);
-    background: var(--color-black);
-    border-radius: 4px;
-    border: 1px solid var(--color-gray);
-}
-
-.spend-details p {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-cream);
-    font-size: 0.9rem;
-}
-
-/* User History Styles */
-.user-history {
-    background: var(--color-dark-gray);
-}
-
-.history-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.history-item {
-    background: var(--color-black);
-    border-radius: 12px;
-    padding: var(--spacing-lg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    transition: all var(--transition-normal);
-}
-
-.history-item:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-gold);
-}
-
-.history-movie {
-    display: flex;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-}
-
-.movie-poster-small {
-    width: 80px;
-    height: 120px;
-    flex-shrink: 0;
-}
-
-.movie-poster-small img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.movie-details {
-    flex: 1;
-}
-
-.movie-details h4 {
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-xs);
-    font-size: 1.1rem;
-}
-
-.watch-date, .combo-used {
-    color: var(--color-light-gray);
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-xs);
-}
-
-.user-rating {
-    margin-top: var(--spacing-sm);
-}
-
-.user-rating .star {
-    color: var(--color-gold);
-    font-size: 1rem;
-}
-
-.user-rating .star:not(.filled) {
-    color: var(--color-gray);
-}
-
-.user-rating .star {
-    cursor: pointer;
-    transition: all var(--transition-normal);
-}
-
-.user-rating .star:hover {
-    transform: scale(1.2);
-}
-
-.rate-text {
-    color: var(--color-light-gray);
-    font-size: 0.8rem;
-    margin-left: var(--spacing-sm);
-    font-style: italic;
-}
-
-.history-actions {
-    display: flex;
-    gap: var(--spacing-sm);
-    justify-content: flex-end;
-}
-
-.booking-form-container {
-    padding: var(--spacing-xl);
-}
-
-.booking-form {
-    background: var(--color-dark-gray);
-    padding: var(--spacing-xl);
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.form-group {
-    margin-bottom: var(--spacing-md);
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-cream);
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: var(--spacing-sm);
-    border: 1px solid var(--color-gray);
-    border-radius: 4px;
-    background: var(--color-black);
-    color: var(--color-cream);
-    font-size: 1rem;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-gold);
-    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
-}
-
-.btn-full {
-    width: 100%;
-    padding: var(--spacing-md);
-    font-size: 1.1rem;
-}
-
-/* Responsive Design */
+.calendar-day.selected small { color: var(--color-black); }
+
+.day-number { font-weight: 600; margin-bottom: var(--spacing-xs); color: var(--color-black); }
+.day-status { margin-bottom: var(--spacing-xs); }
+.status { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-bottom: var(--spacing-xs); }
+.status.available { background: rgba(0, 0, 0, 0.12); color: var(--color-black); }
+.status.full { background: rgba(0, 0, 0, 0.12); color: var(--color-black); }
+.status.too-far { background: rgba(0, 0, 0, 0.12); color: var(--color-black); }
+.menu-type { display: block; font-size: 0.7rem; color: var(--color-light-gray); margin-bottom: var(--spacing-xs); }
+.capacity-info { font-size: 0.7rem; color: var(--color-black); font-weight: 500; }
+.booking-count { font-size: 0.7rem; color: var(--color-dark-gray); margin-top: var(--spacing-xs); }
+.time-slots { margin-top: var(--spacing-xs); }
+.time-slots small { color: var(--color-light-gray); font-size: 0.7rem; }
+
+/* Movie items & modals - CHỈ ĐEN VÀ TRẮNG */
+.movie-schedule { display: grid; gap: var(--spacing-lg); }
+.movie-item { display: grid; grid-template-columns: 120px 1fr; gap: var(--spacing-lg); background: var(--color-white); border-radius: 8px; padding: var(--spacing-lg); border: 1px solid rgba(0, 0, 0, 0.06); color: var(--color-black); }
+.movie-poster img { border-radius: 4px; }
+.movie-info h3 { color: var(--color-black); margin-bottom: var(--spacing-sm); }
+.movie-genre, .movie-duration, .movie-language { color: var(--color-light-gray); }
+.minimum-spend { background: var(--color-white); padding: var(--spacing-sm); border-radius: 8px; margin-bottom: var(--spacing-md); border: 1px solid rgba(0, 0, 0, 0.06); }
+.spend-label { color: var(--color-black); }
+.spend-amount { color: var(--color-black); }
+.time-slot { background: var(--color-white); color: var(--color-black); padding: 4px 12px; border-radius: 12px; font-size: 0.9rem; cursor: pointer; transition: all var(--transition-normal); border: 1px solid rgba(0,0,0,0.1); }
+.time-slot:hover { background: var(--color-black); color: var(--color-white); }
+.minimum-spend-info { background: var(--color-white); padding: var(--spacing-lg); border-radius: 8px; margin-bottom: var(--spacing-lg); border: 1px solid rgba(0, 0, 0, 0.06); }
+
+/* Modals - CHỈ ĐEN VÀ TRẮNG */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.6); }
+.modal-content { background: var(--color-white); margin: 2% auto; padding: var(--spacing-xl); border: 2px solid var(--color-black); border-radius: 12px; width: 90%; max-width: 1000px; max-height: 90vh; overflow-y: auto; position: relative; color: var(--color-black); }
+.modal-content h2 { color: var(--color-black); margin-bottom: var(--spacing-lg); text-align: center; }
+.close { color: var(--color-black); float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; top: var(--spacing-md); right: var(--spacing-lg); }
+.close:hover, .close:focus { color: var(--color-black); text-decoration: none; }
+
+.movie-selection { display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl); }
+.movie-selection-options { background: var(--color-white); padding: var(--spacing-lg); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.06); }
+.tab-btn { background: transparent; border: 1px solid var(--color-gray); color: var(--color-black); padding: var(--spacing-sm) var(--spacing-md); border-radius: 4px; cursor: pointer; transition: all var(--transition-normal); font-size: 0.9rem; }
+.tab-btn.active { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); }
+.filter-btn { background: var(--color-white); border: 1px solid var(--color-gray); color: var(--color-black); padding: var(--spacing-xs) var(--spacing-sm); border-radius: 12px; cursor: pointer; transition: all var(--transition-normal); font-size: 0.8rem; }
+.filter-btn.active { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); }
+
+.custom-movie-info { text-align: center; padding: var(--spacing-xl); }
+.custom-movie-info h3 { color: var(--color-black); }
+.custom-movie-requirements { background: var(--color-white); padding: var(--spacing-lg); border-radius: 8px; margin-bottom: var(--spacing-lg); border: 1px solid rgba(0, 0, 0, 0.06); }
+
+.movie-card-modal { background: var(--color-white); border-radius: 12px; padding: var(--spacing-md); border: 1px solid rgba(0, 0, 0, 0.06); transition: all var(--transition-normal); cursor: pointer; text-align: center; position: relative; overflow: hidden; }
+.movie-card-modal:hover { transform: translateY(-4px); border-color: var(--color-black); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); }
+.movie-card-modal.selected { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
+
+.combo-card-modal, .movie-card-modal, .movie-poster-modal { color: var(--color-dark-gray); }
+.combo-items-modal small { background: rgba(0,0,0,0.03); color: var(--color-dark-gray); }
+
+/* Form and summary - CHỈ ĐEN VÀ TRẮNG */
+.movie-summary { background: var(--color-white); padding: var(--spacing-lg); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.06); position: sticky; top: var(--spacing-lg); max-height: 80vh; overflow-y: auto; color: var(--color-black); }
+.guest-selection label { color: var(--color-black); }
+.guest-selection select { background: var(--color-white); border: 1px solid var(--color-gray); color: var(--color-black); }
+.total-section { margin-bottom: var(--spacing-lg); padding: var(--spacing-md); background: var(--color-white); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.06); }
+.requirement-status .status-text { color: var(--color-black); }
+
+/* Inputs */
+.form-group label { color: var(--color-dark-gray); }
+.form-group input, .form-group select, .form-group textarea { background: var(--color-white); color: var(--color-dark-gray); border: 1px solid var(--color-gray); }
+
+/* Responsive tweaks (keep mostly same) */
 @media (max-width: 768px) {
-    .movie-selection {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .modal-content {
-        width: 95%;
-        margin: 5% auto;
-        padding: var(--spacing-lg);
-    }
-    
-    .movies-grid-modal {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: var(--spacing-sm);
-    }
-    
-    .combos-grid-modal {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-    }
-    
-    .movie-poster-modal {
-        height: 120px;
-    }
-    
-    .modal-actions {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .modal-actions .btn {
-        width: 100%;
-    }
-    
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-    
-    .cinema-content {
-        padding: var(--spacing-md);
-    }
-    
-    .calendar-container {
-        padding: var(--spacing-md);
-    }
-    
-    .calendar-day {
-        min-height: 80px;
-        padding: var(--spacing-xs);
-    }
-    
-    .movie-options-tabs {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
-    
-    .tab-btn {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .filter-buttons {
-        justify-content: center;
-    }
-    
-    .filter-btn {
-        font-size: 0.75rem;
-        padding: var(--spacing-xs);
-    }
-    
-    .movie-summary {
-        position: static;
-        max-height: none;
-    }
-    
-    .combo-actions {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
-    
-    .combo-actions .btn {
-        width: 100%;
-    }
+    .movie-selection { grid-template-columns: 1fr; gap: var(--spacing-lg); }
+    .modal-content { width: 95%; margin: 5% auto; padding: var(--spacing-lg); }
+    .movies-grid-modal { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-sm); }
+    .combos-grid-modal { grid-template-columns: 1fr; gap: var(--spacing-sm); }
+    .movie-poster-modal { height: 120px; }
+    .modal-actions { flex-direction: column; gap: var(--spacing-sm); }
+    .modal-actions .btn { width: 100%; }
+    .form-row { grid-template-columns: 1fr; }
+    .cinema-content { padding: var(--spacing-md); }
+    .calendar-container { padding: var(--spacing-md); }
+    .calendar-day { min-height: 80px; padding: var(--spacing-xs); }
 }
 </style>
 
@@ -1924,7 +818,7 @@ function updateMovieSummary() {
     if (selectedMovie) {
         movieInfo.innerHTML = `
             <div class="selected-item">
-                <strong>🎬 Phim:</strong> ${selectedMovie.title}
+                <strong>Phim:</strong> ${selectedMovie.title}
                 <br><small>Thể loại: ${selectedMovie.genre} | Thời lượng: ${selectedMovie.duration} phút</small>
             </div>
         `;
@@ -1936,7 +830,7 @@ function updateMovieSummary() {
     if (selectedCombo) {
         comboInfo.innerHTML = `
             <div class="selected-item">
-                <strong>🍿 Combo:</strong> ${selectedCombo.name}
+                <strong>Combo:</strong> ${selectedCombo.name}
                 <br><small>Giá: ${parseFloat(selectedCombo.price).toLocaleString('vi-VN')} VNĐ</small>
             </div>
         `;
@@ -1970,7 +864,7 @@ function updateRequirementStatus() {
     }
     
     statusElement.className = 'requirement-status success';
-    statusElement.querySelector('.status-text').textContent = '✅ Sẵn sàng đặt vé!';
+    statusElement.querySelector('.status-text').textContent = 'Sẵn sàng đặt vé!';
     proceedBtn.disabled = false;
 }
 

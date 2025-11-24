@@ -2,7 +2,7 @@
 
 Website cho hidden bar 419 Saigon kết hợp Cocktail & Cinema.
 
-## 🎯 Tính Năng
+## Tính Năng
 
 - **Dining**: Trải nghiệm ẩm thực truyền thống
 - **Cocktail**: Quầy bar với những ly cocktail độc đáo
@@ -11,14 +11,14 @@ Website cho hidden bar 419 Saigon kết hợp Cocktail & Cinema.
 - **Responsive Design**: Tương thích mọi thiết bị
 - **Dark Luxury Theme**: Thiết kế sang trọng với tông màu tối
 
-## 🛠️ Yêu Cầu Hệ Thống
+## Yêu Cầu Hệ Thống
 
 - PHP 7.4 trở lên
 - MySQL 5.7 trở lên hoặc MariaDB 10.2 trở lên
 - Apache/Nginx web server
 - XAMPP, WAMP, hoặc Laragon (cho development)
 
-## 📦 Cài Đặt
+## Cài Đặt
 
 ### 1. Clone Repository
 ```bash
@@ -97,7 +97,7 @@ define('DB_PASS', '');
         └── js/
 ```
 
-## 🎨 Thiết Kế
+## Thiết Kế
 
 ### Color Palette
 - **Black**: `#0a0a0a` - Màu nền chính
@@ -134,7 +134,7 @@ define('DB_PASS', '');
 - Một order có thể có nhiều order_items
 - Một category có thể có nhiều menu_items
 
-## 🚀 Tính Năng Sắp Tới
+## Tính Năng Sắp Tới
 
 - [ ] Hệ thống đăng nhập/đăng ký
 - [ ] Admin panel hoàn chỉnh

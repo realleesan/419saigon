@@ -15,7 +15,7 @@
             <button class="confirm-close">&times;</button>
         </div>
         <div class="confirm-body">
-            <span class="confirm-icon">⚠️</span>
+            <span class="confirm-icon"></span>
             <p class="confirm-message"></p>
         </div>
         <div class="confirm-actions">
@@ -295,17 +295,17 @@ function showNotification(message, type = 'info', duration = 5000) {
     
     switch(type) {
         case 'success':
-            icon.textContent = '✅';
+            icon.textContent = '';
             break;
         case 'error':
-            icon.textContent = '❌';
+            icon.textContent = '';
             break;
         case 'warning':
-            icon.textContent = '⚠️';
+            icon.textContent = '';
             break;
         case 'info':
         default:
-            icon.textContent = 'ℹ️';
+            icon.textContent = '';
             break;
     }
     

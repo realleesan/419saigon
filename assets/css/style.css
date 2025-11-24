@@ -6,11 +6,11 @@
 }
 
 :root {
-    /* Color Palette */
+    /* Color Palette - CHỈ ĐEN VÀ TRẮNG */
     --color-black: #000000;
-    --color-dark-gray: #111111;
+    --color-dark-gray: #000000;
     --color-wood-brown: #000000;
-    --color-gold: #000000; /* accent -> black */
+    --color-gold: #000000;
     --color-gold-light: rgba(0,0,0,0.85);
     --color-cream: #000000;
     --color-white: #ffffff;
@@ -1242,3 +1242,4 @@ p {
         align-items: center;
     }
 }
+

@@ -3,7 +3,7 @@
 ## Tổng quan
 Trang Cinema đã được thiết kế lại hoàn toàn theo yêu cầu từ hình ảnh, bao gồm:
 
-### ✅ Các tính năng đã triển khai:
+### Các tính năng đã triển khai:
 
 1. **Private Cinema Concept**
    - Đặt riêng theo yêu cầu (hẹn hò, nhóm bạn, sinh nhật...)
@@ -121,4 +121,4 @@ Trang Cinema đã được thiết kế lại hoàn toàn theo yêu cầu từ h
 
 ---
 
-**Trang Cinema đã sẵn sàng sử dụng với đầy đủ tính năng theo yêu cầu!** 🎬✨
+**Trang Cinema đã sẵn sàng sử dụng với đầy đủ tính năng theo yêu cầu!**
