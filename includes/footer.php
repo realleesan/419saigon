@@ -72,10 +72,10 @@
             
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2024 419 Saigon. Tất cả quyền được bảo lưu.
+                    © 2025 419 Saigon. Tất cả quyền được bảo lưu.
                 </p>
                 <p class="footer-powered">
-                    Powered by Misty Team.
+                    Powered by <a href="https://mistydev.id.vn" target="_blank">Misty Team</a>
                 </p>
             </div>
         </div>

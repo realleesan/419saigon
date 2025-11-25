@@ -134,7 +134,7 @@ if (isset($_SESSION['booking_error'])) {
 </section>
 
 <!-- Calendar Section -->
-<section id="schedule" class="section" style="background: var(--color-dark-gray);">
+<section id="schedule" class="section" style="background: var(--color-white);">
     <div class="container">
         <h2 class="section-title">Lịch Chiếu Phim Tháng <?php echo date('m/Y', strtotime($current_month)); ?></h2>
         <div class="calendar-container">
@@ -628,9 +628,9 @@ if (isset($_SESSION['booking_error'])) {
 .movie-selection { display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl); }
 .movie-selection-options { background: var(--color-white); padding: var(--spacing-lg); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.06); }
 .tab-btn { background: transparent; border: 1px solid var(--color-gray); color: var(--color-black); padding: var(--spacing-sm) var(--spacing-md); border-radius: 4px; cursor: pointer; transition: all var(--transition-normal); font-size: 0.9rem; }
-.tab-btn.active { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); }
+.tab-btn.active { background: var(--color-white); color: var(--color-black); border-color: var(--color-black); border-width: 2px; }
 .filter-btn { background: var(--color-white); border: 1px solid var(--color-gray); color: var(--color-black); padding: var(--spacing-xs) var(--spacing-sm); border-radius: 12px; cursor: pointer; transition: all var(--transition-normal); font-size: 0.8rem; }
-.filter-btn.active { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); }
+.filter-btn.active { background: var(--color-white); color: var(--color-black); border-color: var(--color-black); border-width: 2px; }
 
 .custom-movie-info { text-align: center; padding: var(--spacing-xl); }
 .custom-movie-info h3 { color: var(--color-black); }
@@ -638,10 +638,10 @@ if (isset($_SESSION['booking_error'])) {
 
 .movie-card-modal { background: var(--color-white); border-radius: 12px; padding: var(--spacing-md); border: 1px solid rgba(0, 0, 0, 0.06); transition: all var(--transition-normal); cursor: pointer; text-align: center; position: relative; overflow: hidden; }
 .movie-card-modal:hover { transform: translateY(-4px); border-color: var(--color-black); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); }
-.movie-card-modal.selected { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
+.movie-card-modal.selected { background: var(--color-white); color: var(--color-black); border-color: var(--color-black); border-width: 2px; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
 
-.combo-card-modal, .movie-card-modal, .movie-poster-modal { color: var(--color-dark-gray); }
-.combo-items-modal small { background: rgba(0,0,0,0.03); color: var(--color-dark-gray); }
+.combo-card-modal, .movie-card-modal, .movie-poster-modal { color: var(--color-black); }
+.combo-items-modal small { background: rgba(0,0,0,0.03); color: var(--color-black); }
 
 /* Form and summary - CHỈ ĐEN VÀ TRẮNG */
 .movie-summary { background: var(--color-white); padding: var(--spacing-lg); border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.06); position: sticky; top: var(--spacing-lg); max-height: 80vh; overflow-y: auto; color: var(--color-black); }

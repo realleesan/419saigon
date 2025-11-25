@@ -47,41 +47,12 @@ include 'includes/header.php';
     </div>
 </section>
 
-<!-- Vision Section -->
-<section class="section" style="background: var(--color-dark-gray);">
-    <div class="container">
-        <div class="vision-content">
-            <h2 class="section-title">Tầm Nhìn & Sứ Mệnh</h2>
-            <div class="vision-grid">
-                <div class="vision-card">
-                    <div class="vision-icon">🎯</div>
-                    <h3>Tầm Nhìn</h3>
-                    <p>Trở thành điểm đến hàng đầu tại Sài Gòn cho những trải nghiệm ẩm thực và giải trí độc đáo, nơi mọi khách hàng đều cảm thấy được chào đón và tận hưởng những khoảnh khắc đáng nhớ.</p>
-                </div>
-                <div class="vision-card">
-                    <div class="vision-icon">🌟</div>
-                    <h3>Sứ Mệnh</h3>
-                    <p>Mang đến những trải nghiệm ẩm thực và giải trí chất lượng cao, kết hợp giữa văn hóa truyền thống và sự sáng tạo hiện đại, tạo nên những kỷ niệm đáng nhớ cho mọi khách hàng.</p>
-                </div>
-                <div class="vision-card">
-                    <div class="vision-icon">💎</div>
-                    <h3>Giá Trị Cốt Lõi</h3>
-                    <p>Chất lượng, sự sáng tạo, tận tâm và trải nghiệm khách hàng là những giá trị không bao giờ thay đổi trong mọi hoạt động của chúng tôi.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Team Section -->
 <section class="section">
     <div class="container">
         <h2 class="section-title">Đội Ngũ Của Chúng Tôi</h2>
         <div class="team-grid">
             <div class="team-member">
-                <div class="member-image">
-                    <img src="assets/images/chef.jpg" alt="Head Chef" class="lazy" data-src="assets/images/chef.jpg">
-                </div>
                 <div class="member-info">
                     <h3>Chef Tanaka</h3>
                     <p class="member-role">Head Chef</p>
@@ -90,9 +61,6 @@ include 'includes/header.php';
             </div>
             
             <div class="team-member">
-                <div class="member-image">
-                    <img src="assets/images/bartender.jpg" alt="Head Bartender" class="lazy" data-src="assets/images/bartender.jpg">
-                </div>
                 <div class="member-info">
                     <h3>Alex Chen</h3>
                     <p class="member-role">Head Bartender</p>
@@ -101,43 +69,11 @@ include 'includes/header.php';
             </div>
             
             <div class="team-member">
-                <div class="member-image">
-                    <img src="assets/images/manager.jpg" alt="General Manager" class="lazy" data-src="assets/images/manager.jpg">
-                </div>
                 <div class="member-info">
                     <h3>Sarah Nguyen</h3>
                     <p class="member-role">General Manager</p>
                     <p class="member-description">Với kinh nghiệm quản lý trong ngành dịch vụ cao cấp, Sarah đảm bảo mọi trải nghiệm tại 419 Saigon đều hoàn hảo.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Values Section -->
-<section class="section" style="background: var(--color-dark-gray);">
-    <div class="container">
-        <h2 class="section-title">Những Điều Chúng Tôi Tin Tưởng</h2>
-        <div class="values-grid">
-            <div class="value-item">
-                <div class="value-icon">🍣</div>
-                <h4>Chất Lượng</h4>
-                <p>Mọi nguyên liệu đều được lựa chọn kỹ lưỡng, đảm bảo chất lượng cao nhất cho từng món ăn và đồ uống.</p>
-            </div>
-            <div class="value-item">
-                <div class="value-icon">🎨</div>
-                <h4>Sáng Tạo</h4>
-                <p>Không ngừng sáng tạo và đổi mới để mang đến những trải nghiệm độc đáo và đáng nhớ.</p>
-            </div>
-            <div class="value-item">
-                <div class="value-icon">Heart</div>
-                <h4>Tận Tâm</h4>
-                <p>Mọi nhân viên đều tận tâm phục vụ, đảm bảo mỗi khách hàng đều cảm thấy được quan tâm và chào đón.</p>
-            </div>
-            <div class="value-item">
-                <div class="value-icon">Earth</div>
-                <h4>Bền Vững</h4>
-                <p>Cam kết thực hành bền vững trong mọi hoạt động, từ việc lựa chọn nguyên liệu đến quản lý chất thải.</p>
             </div>
         </div>
     </div>
@@ -249,9 +185,9 @@ include 'includes/header.php';
 .vision-card {
     text-align: center;
     padding: var(--spacing-xl);
-    background: var(--color-black);
+    background: var(--color-white);
     border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .vision-icon {
@@ -271,20 +207,10 @@ include 'includes/header.php';
 }
 
 .team-member {
-    background: var(--color-dark-gray);
+    background: var(--color-white);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.member-image {
-    height: 250px;
-}
-
-.member-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .member-info {
@@ -372,12 +298,12 @@ include 'includes/header.php';
 }
 
 .timeline-content {
-    background: var(--color-dark-gray);
+    background: var(--color-white);
     padding: var(--spacing-lg);
     border-radius: 8px;
     margin: 0 var(--spacing-lg);
     flex: 1;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .timeline-content h4 {

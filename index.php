@@ -5,11 +5,13 @@ include 'includes/header.php';
 
 <!-- Hero Section -->
 <section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">419 Saigon</h1>
-        <p class="hero-subtitle">A Japanese Izakaya Meets Cocktail & Cinema</p>
-        <div class="hero-cta">
-            <button id="openExperienceModal" class="btn btn-primary"><span class="hero-arrow">↗</span>Book Your Experience</button>
+    <div class="hero-frame">
+        <div class="hero-content">
+            <h1 class="hero-title">419 Saigon</h1>
+            <p class="hero-subtitle">A Japanese Izakaya Meets Cocktail & Cinema</p>
+            <div class="hero-cta">
+                <button id="openExperienceModal" class="btn btn-primary"><span class="hero-arrow">↗</span>Book Your Experience</button>
+            </div>
         </div>
     </div>
 </section>
@@ -95,6 +97,48 @@ include 'includes/header.php';
 </section>
 
 <style>
+/* Hero Frame - Khung nghệ thuật cho hero section */
+.hero {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.hero-frame {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    background: var(--color-white);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px);
+    z-index: 2;
+}
+
+.hero-frame .hero-content {
+    width: 100%;
+    max-width: 800px;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-frame {
+        padding: var(--spacing-md);
+        min-height: calc(100vh - 140px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-frame {
+        padding: var(--spacing-sm);
+        min-height: calc(100vh - 120px);
+    }
+}
+
 /* Additional styles for homepage */
 .card-image {
     height: 200px;

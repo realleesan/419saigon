@@ -680,19 +680,20 @@ function rateCinemaExperience(bookingId) {
 }
 
 .tab-btn:hover {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: var(--color-gold);
+    background: rgba(0, 0, 0, 0.05);
+    border-color: var(--color-black);
 }
 
 .tab-btn.active {
-    background: var(--color-gold);
+    background: var(--color-white);
     color: var(--color-black);
-    border-color: var(--color-gold);
+    border-color: var(--color-black);
+    border-width: 2px;
     font-weight: 600;
 }
 
 .tab-btn.active:hover {
-    background: var(--color-gold);
+    background: var(--color-white);
     color: var(--color-black);
 }
 
@@ -751,8 +752,8 @@ function rateCinemaExperience(bookingId) {
 }
 
 .booking-item {
-    background: var(--color-dark-gray);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
@@ -882,8 +883,8 @@ function rateCinemaExperience(bookingId) {
 }
 
 .saved-set-item {
-    background: var(--color-dark-gray);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: var(--spacing-lg);
     transition: all 0.3s ease;
@@ -1073,8 +1074,8 @@ function rateCinemaExperience(bookingId) {
 }
 
 .saved-drink-card {
-    background: var(--color-dark-gray);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: var(--spacing-lg);
     transition: all 0.3s ease;
